@@ -1,0 +1,54 @@
+1.Komanda per te ndertuar nje database:
+CREATE DATABASE shkolla;
+
+2.Komanda per te ndertuar nje tabela brenda databazes:
+CREATE TABLE tbl1(
+    ID INT(2) PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20),
+    gender ENUM("F","M")
+);
+
+3.Komanda per te shtuar rekorde brenda tabeles:
+INSERT INTO tbl1 VALUES(1,"Greta","F"),(2,"Ari","M");
+
+4.Komanda per te update-tuar rekordet e tabeles:
+UPDATE tbl1 SET name = "Mali", gender = "M" WHERE ID = 1;
+
+5.Komanda per te fshir nje rekord te tabeles:
+DELETE FROM tbl1 WHERE ID = 2;
+
+6.Komanda per te fshire te gjitha rekordet e tabeles:
+DELETE FROM tbl1;
+
+7.Komanda per te fshire tabelen nga databaza:
+DROP TABLE tbl1;
+
+8.Komanda per te fshire databazen:
+DROP DATABASE shkolla;
+
+9.Komanda per te selektuar nje,disa apo te gjitha kolonat:
+SELECT * FROM fituesit // selekton te gjitha kolonat e tabeles
+SELECT emri FROM fituesi // selekton vetem nje kolone te tables
+SELECT emri, mbiemri, mosha FROM fituesi // selekton dy apo me shume kolona te tabeles
+
+10.Komanda per te filtruar rekordet ne baze te kushteve:
+SELECT * FROM fituesit WHERE ID = 10; // e shfaq rekordin me id 10
+SELECT * FROM fituesit WHERE mosha > 20 AND mosha < 30; //shfaq te gjitha rekordet me moshen ndermejt 20 deri 30
+
+11.Komanda per te numruar numrin e rekordeve te tabeles:
+SELECT COUNT(*) FROM fituesit// rez:10
+
+12.Komanda per te gjetur mesataren e nje kolone:
+SELECT AVG(mosha) FROM fituesit;
+
+13.Komanda per te gjetur vleren me te madhe te nje kolone:
+SELECT MAX(mosha) FROM fituesit;
+
+14.Komanda per te gjetur vleren me te vogel te nje kolone:
+SELECT MIN(mosha) FROM fituesit;
+
+15.Komanda per te filtruar rekordet ne baze te alfabetit:
+SELECT * FROM fituesit ORDER BY emri ASC//filtron emrat e rekordeve ne baze te alfabetit A-Z
+SELECT * FROM fituesit ORDER BY emri DESC//filtron emrat e rekordeve ne baze te alfabetit Z-A
+SELECT * FROM fituesit ORDER BY MOSHA ASC//filtron emrat e rekordeve nga me e vogla deri me e madhja
+SELECT * FROM fituesit ORDER BY MOSHA DESC//filtron emrat e rekordeve nga me e madhja deri te me e vogla
